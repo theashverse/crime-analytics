@@ -26,3 +26,6 @@ stanio==0.5.1
 threadpoolctl==3.6.0
 tqdm==4.68.2
 tzdata==2026.2
+gunicorn==21.2.0
+flask
+flask-cors
