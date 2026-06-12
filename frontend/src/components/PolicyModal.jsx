@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
+import config from "../config";
 
 const priorityColors = {
   High: '#D85A30',
@@ -16,7 +17,9 @@ export default function PolicyModal({ state, onClose }) {
   const generate = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`http://localhost:5000/api/policy?state=${state}`);
+     const res = await axios.get(
+  `${config.API_BASE_URL}/api/policy?state=${state}`
+);
       setPolicy(res.data);
       setGenerated(true);
     } catch (err) {

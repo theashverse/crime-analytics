@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import config from "../config";
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
@@ -21,9 +22,15 @@ export default function ChatBot() {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat', {
-        question: input
-      });
+      // const res = await axios.post('http://localhost:5000/api/chat', {
+      //   question: input
+      // });
+      const res = await axios.post(
+  `${config.API_BASE_URL}/api/chat`,
+  {
+    question: input
+  }
+);
       setMessages(prev => [...prev, {
         role: 'assistant',
         text: res.data.answer,

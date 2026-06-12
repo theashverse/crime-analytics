@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import jsPDF from 'jspdf';
 import axios from 'axios';
+import config from "../config";
 
 export default function ReportGenerator({ filters, summary, crimes }) {
   const [generating, setGenerating] = useState(false);
@@ -180,7 +181,9 @@ export default function ReportGenerator({ filters, summary, crimes }) {
       // ── Page 4 — Policy Recommendations ──
       if (filters?.state) {
         try {
-          const policyRes = await axios.get(`http://localhost:5000/api/policy?state=${filters.state}`);
+          const policyRes = await axios.get(
+  `${config.API_BASE_URL}/api/policy?state=${filters.state}`
+);
           const policy = policyRes.data;
 
           doc.addPage();
