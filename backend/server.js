@@ -9,7 +9,9 @@ const crimeRoutes = require("./routes/crimeRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://your-frontend.onrender.com', 'http://localhost:5173']
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
