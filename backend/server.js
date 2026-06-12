@@ -10,7 +10,7 @@ const crimeRoutes = require("./routes/crimeRoutes");
 const app = express();
 
 app.use(cors({
-  origin: ['https://your-frontend.onrender.com', 'http://localhost:5173']
+  origin: ['https://crime-analytics-1.onrender.com', 'http://localhost:5173']
 }));
 app.use(express.json());
 
