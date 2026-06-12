@@ -4,7 +4,7 @@ from forecast import get_forecast
 from cluster import get_clusters
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['https://your-frontend.onrender.com', 'http://localhost:5173'])
 
 
 @app.route('/clusters', methods=['GET'])
