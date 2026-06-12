@@ -28,3 +28,4 @@ tqdm==4.68.2
 tzdata==2026.2
 gunicorn==21.2.0
 flask
+flask-cors
